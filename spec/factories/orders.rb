@@ -7,7 +7,9 @@ FactoryGirl.define do
   factory :order_associated, class: Order do
     placed_on { 3.days.ago}
     status :waiting
+    price :'33' 
   end
+
   factory :order1, class: Order do
     association :customer, factory: :track
     placed_on { 6.weeks.ago}

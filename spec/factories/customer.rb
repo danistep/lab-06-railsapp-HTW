@@ -22,4 +22,13 @@ FactoryGirl.define do
       create_list(:order_associated, 5, customer: customer)
     end
   end
+
+factory :customer_with_orders_and_price, class: Customer do
+    name "Dagobert"
+    after(:build) do |customer, evaluator|
+      create_list(:order_associated, 5, customer: customer)
+    end
+  end
+
+
 end
