@@ -23,6 +23,17 @@ class OrdersController < ApplicationController
     end
   end
 
+  def price=(amount)
+    @price=amount
+  end
+
+  def price
+    @price
+  end
+
+
+
+
   # GET /orders/1/edit
   def edit
   end
