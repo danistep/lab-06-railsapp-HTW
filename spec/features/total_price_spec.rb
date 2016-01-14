@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe "customer page", :type => :feature do
-	include ActionView::Helpers
   before :each do
     @customer = create(:customer_with_orders)
   end
