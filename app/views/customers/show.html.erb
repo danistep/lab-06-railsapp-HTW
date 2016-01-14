@@ -25,10 +25,13 @@
 
 <p>
   <strong>Total price:</strong>
-  <%= @customer.orders.sum(:price)%>
+  <%= @total %>
 </p>
 
-
+<p>
+  <strong>Total price with discount:</strong>
+  <%= @final%>
+</p>
 
 
 <%= link_to 'New Order', new_order_path(customer: @customer) %>

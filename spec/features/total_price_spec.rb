@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 describe "customer page", :type => :feature do
+	include ActionView::Helpers
   before :each do
-    @customer = create(:customer_with_orders_and_price)
+    @customer = create(:customer_with_orders)
   end
 
 
@@ -10,7 +11,7 @@ describe "customer page", :type => :feature do
 it "shows an order with price" do
     visit "/customers/#{@customer.id}"
 
-    expect(@customer.orders.sum(:price)).to be > 1
+    expect(@customer.orders.sum(:price)).to eq(166)
 
     expect(page).to have_content 'Total price'
 

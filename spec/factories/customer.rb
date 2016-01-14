@@ -18,6 +18,7 @@ FactoryGirl.define do
 
   factory :customer_with_orders, class: Customer do
     name "Dagobert"
+    discount 11.0
     after(:build) do |customer, evaluator|
       create_list(:order_associated, 5, customer: customer)
     end

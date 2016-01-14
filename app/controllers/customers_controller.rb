@@ -10,7 +10,15 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    @total = @customer.orders.sum(:price)
+    @final = @total * (1 - @customer.discount/100)
   end
+
+
+
+  
+
+
 
   # GET /customers/new
   def new
@@ -71,4 +79,8 @@ class CustomersController < ApplicationController
     def customer_params
       params.require(:customer).permit(:name, :discount)
     end
+
+
+
+
 end
