@@ -4,7 +4,11 @@ class PumpkinsController < ApplicationController
   # GET /pumpkins
   # GET /pumpkins.json
   def index
-    @pumpkins = Pumpkin.all
+    params.permit(:name, :color, :size, :price, :asc, :desc)
+
+    params[:sort] ||= "name"
+    params[:sortord] ||= "asc"
+    @pumpkins = Pumpkin.order(params[:sort] +" "+ params[:sortord])
   end
 
   # GET /pumpkins/1
