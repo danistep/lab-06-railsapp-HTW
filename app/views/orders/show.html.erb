@@ -20,5 +20,24 @@
   <%= @order.status %>
 </p>
 
+<p>
+  <strong>LineItem:</strong>
+</p>
+
+
+<table>
+<tbody>
+    <% @order.line_items.each do |line_item| %>
+      <tr>
+        <td><%= link_to line_item.pumpkin.name, line_item.pumpkin %></td>
+        <td><%= line_item.amount %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

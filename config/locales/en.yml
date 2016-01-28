@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  type: "Type"
+  color: "Color"
+  size: "Size" 
+  price: "Price"

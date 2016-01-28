@@ -1,24 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Type:</strong>
+<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+|
+<%= link_to_unless I18n.locale == :de, "Deutsch", locale: :de %>
+</p>
+
+<p>
+  <strong><%=t :type %></strong>
   <%= @pumpkin.name %>
 </p>
 
 <p>
-  <strong>Color:</strong>
+  <strong><%=t :color %></strong>
   <%= @pumpkin.color %>
 </p>
 
 <p>
-  <strong>Size:</strong>
+  <strong><%=t :size %></strong>
   <%= @pumpkin.size %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%=t :price %></strong>
   <%= @pumpkin.price %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_pumpkin_path(@pumpkin) %> |
 <%= link_to 'Back', pumpkins_path %>
+
+
+

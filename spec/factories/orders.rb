@@ -9,6 +9,10 @@ FactoryGirl.define do
     placed_on { 3.days.ago}
     status :waiting
     price 33.2 
+     after (:create) do | order |
+      create(:line_item_1, order: order)
+      create(:line_item_2, order: order)
+    end
   end
 
   factory :order1, class: Order do

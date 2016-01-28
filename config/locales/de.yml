@@ -1,0 +1,7 @@
+de:
+  hello: "Hallo welt"
+
+  type: "Typ"
+  color: "Farbe"
+  size: "Größe" 
+  price: "Preis"
